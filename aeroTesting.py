@@ -109,6 +109,7 @@ class Probe(object):
         df = self.data[['tunnel_ref_total_pressure', 'uut_static_pressure1', 'uut_static_pressure2', 'uut_total_pressure','tunnel_ref_static_pressure','angle']]
         # normalize angle column
         df['angle'] = df['angle'].apply(self.normalize_angle)
+        #df.loc['angle'] = df['angle'].apply(self.normalize_angle)
 
         mean_df = df.groupby('angle').mean()
         #mean_df.head()
